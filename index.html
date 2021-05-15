@@ -5,20 +5,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Todo list</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="main.js" defer></script>
+        <!-- Reset CSS file
+            Author: Todd McLeod
+            Github: https://github.com/ -->
+        <link rel="stylesheet" href="./asserts/styles/reset-css.css">
+        <link rel="stylesheet" href="./asserts/styles/style.css">
+        <script src="asserts/scripts/main.js" defer></script>
     </head>
 
     <body>
-        <header>
-            <h1>TODO LIST</h1>
+        <header class="header">
+            <h1 class="header__title">TODO LIST</h1>
         </header>
-        <main>
-            <input type="text" id="input">
-            <button id="btn--add">Add</button>
-            <ul id="list">
+        <main class="main">
+            <div class="input-field">
+                <input type="text" id="input">
+                <button id="btn--add">Add</button>
 
-            </ul>
+            </div>
+            <div class="list-field">
+                <ul id="list">
+
+                </ul>
+
+            </div>
         </main>
     </body>
 
