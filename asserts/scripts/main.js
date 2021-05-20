@@ -6,7 +6,8 @@ class Item {
 
 	static render(item) {
 		let li = document.createElement("li");
-		li.innerHTML = `${item.content} <button>x</button>`;
+		li.innerHTML = `${item.content} <input type="checkbox" class="main__item-btn"></input>`;
+		li.classList.add("main__item");
 		li.dataset.no = item.id;
 
 		return li;
@@ -96,10 +97,10 @@ class App {
 		});
 
 		List.listElement.addEventListener("click", (e) => {
-			if (e.target.tagName === "BUTTON") {
+			if (e.target.classList.contains("main__item-btn")) {
 				let li = e.target.closest("li");
 				this.list.removeItem(Number(li.dataset.no));
-				li.remove();
+				setTimeout(() => li.remove(), 1000);
 			}
 		});
 	}
