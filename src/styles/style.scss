@@ -2,6 +2,7 @@
 	--background-color: #8bd3dd;
 	--header-background: #0045ff;
 	--list-background: #fff;
+	--disappear-duration: 0.75s;
 }
 
 // Initialize
@@ -32,6 +33,13 @@ input[type="text"] {
 	}
 }
 
+@mixin transBackground($transDu: 0.5s) {
+	background-color: transparent;
+	transition-property: background-color;
+	transition-duration: $transDu;
+	transition-timing-function: linear;
+}
+
 // List section
 .main {
 	&__input {
@@ -43,6 +51,13 @@ input[type="text"] {
 		#input {
 			padding: 0.5rem 1rem;
 			width: 40%;
+
+			@include transBackground();
+
+			&:hover,
+			&:focus {
+				background-color: white;
+			}
 		}
 
 		#btn--add {
@@ -71,13 +86,13 @@ input[type="text"] {
 			display: inline-block;
 			width: 50vw;
 			min-height: 20rem;
-			background-color: var(--list-background);
+			background-color: transparent;
 			border: 0.5rem solid blue;
 			border-radius: 1rem;
 			padding: 1rem 0;
 
 			transition-property: all;
-			transition-duration: 1s;
+			transition-duration: var(--disappear-duration);
 			transition-timing-function: ease;
 		}
 	}
@@ -91,6 +106,14 @@ input[type="text"] {
 		position: relative;
 		word-break: break-word;
 
+		&:hover {
+			background-color: var(--list-background);
+		}
+
+		&:hover > &-btn {
+			appearance: checkbox;
+		}
+
 		&-btn {
 			--border-color: #000;
 			position: absolute;
@@ -99,7 +122,25 @@ input[type="text"] {
 			border: 0.25rem solid var(--border-color);
 			width: 1.5rem;
 			height: 1.5rem;
-			appearance: checkbox;
+			appearance: none;
 		}
+	}
+}
+
+.disappear {
+	animation-name: flyout;
+	animation-duration: var(--disappear-duration);
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+}
+
+@keyframes flyout {
+	from {
+		opacity: 100%;
+		right: 0;
+	}
+	to {
+		right: 100%;
+		opacity: 0;
 	}
 }

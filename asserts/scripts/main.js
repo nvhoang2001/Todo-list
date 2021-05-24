@@ -100,7 +100,8 @@ class App {
 			if (e.target.classList.contains("main__item-btn")) {
 				let li = e.target.closest("li");
 				this.list.removeItem(Number(li.dataset.no));
-				setTimeout(() => li.remove(), 1000);
+				li.classList.add("disappear");
+				setTimeout(() => li.remove(), 750);
 			}
 		});
 	}
