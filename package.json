@@ -1,0 +1,19 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "a simple todo-list",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "style": "node-sass --include-path scss ./src/styles/style.scss ./asserts/styles/style.css",
+    "style:reset": "node-sass --output-style compressed ./src/styles/reset-css.scss ./asserts/styles/reset-css.css",
+    "start": "webpack"
+
+  },
+  "author": "Ngô Việt Hoàng",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}

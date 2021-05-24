@@ -1,4 +1,4 @@
-import { Item } from "./Item.js";
+import { Item } from "./Item";
 
 export class List {
 	static listElement = document.getElementById("list");
