@@ -7,7 +7,7 @@
   "scripts": {
     "style": "node-sass --include-path scss ./src/styles/style.scss ./asserts/styles/style.css",
     "style:reset": "node-sass --output-style compressed ./src/styles/reset-css.scss ./asserts/styles/reset-css.css",
-    "start": "webpack"
+    "start": "webpack --config webpack.config.js"
 
   },
   "author": "Ngô Việt Hoàng",
