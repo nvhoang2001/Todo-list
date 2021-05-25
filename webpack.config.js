@@ -8,4 +8,12 @@ module.exports = {
 		path: path.resolve(__dirname, "asserts", "scripts"),
 	},
 	devtool: "inline-source-map",
+	module: {
+		rules: [
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"],
+			},
+		],
+	},
 };
