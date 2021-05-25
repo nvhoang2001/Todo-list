@@ -5,14 +5,13 @@
   "private": true,
   "main": "main.js",
   "scripts": {
-    "style": "node-sass --include-path scss ./src/styles/style.scss ./asserts/styles/style.css",
-    "style:reset": "node-sass --output-style compressed ./src/styles/reset-css.scss ./asserts/styles/reset-css.css",
     "start": "webpack --config webpack.config.js"
   },
   "author": "Ngô Việt Hoàng",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
     "node-sass": "^6.0.0",
     "sass-loader": "^11.1.1",
     "style-loader": "^2.0.0",
