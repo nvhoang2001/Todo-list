@@ -2,13 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	mode: "development",
 	entry: "./src/scripts/main.js",
-	output: {
-		filename: "main-[contenthash].js",
-		path: path.resolve(__dirname, "asserts", "scripts"),
-	},
-	devtool: "inline-source-map",
 	module: {
 		rules: [
 			{
