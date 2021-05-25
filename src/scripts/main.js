@@ -1,6 +1,5 @@
 import { App } from "./Page";
-import "../styles/reset-css.css";
-import "../styles/style.css";
+import "../styles/style.scss";
 
 let app = new App();
 app.active();
