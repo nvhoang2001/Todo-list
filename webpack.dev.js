@@ -7,7 +7,6 @@ module.exports = merge(commonConfig, {
 	output: {
 		filename: "main.js",
 		path: path.resolve(__dirname, "asserts", "scripts"),
-		clean: true,
 	},
 	devtool: "source-map",
 });
